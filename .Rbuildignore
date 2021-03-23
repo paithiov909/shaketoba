@@ -1,0 +1,15 @@
+^renv$
+^renv\.lock$
+^.*\.Rproj$
+^\.Rproj\.user$
+^data-raw$
+^dev$
+^LICENSE\.md$
+^README\.Rmd$
+^srcjs$
+^node_modules$
+^package\.json$
+^yarn\.lock$
+^webpack\.dev\.js$
+^webpack\.prod\.js$
+^webpack\.common\.js$

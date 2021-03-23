@@ -1,0 +1,43 @@
+Package: shaketoba
+Title: A Shiny Application Powered by 'golem'
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Akiru", "Kato", email = "paithiov909@gmail.com", role = c("cre", "aut")))
+Description: 'Shaketoba', also pronounced as 'Saketoba', is salty dried autumn salmon
+    that is known as a traditional food in the Hokkaido and Tohoku regions of Japan.
+License: MIT + file LICENSE
+URL: https://github.com/paithiov909/shaketoba
+BugReports: https://github.com/paithiov909/shaketoba/issues
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
+SystemRequirements: Java
+Imports: 
+    attempt,
+    cachem,
+    config,
+    DT,
+    future,
+    glue,
+    golem,
+    htmltools,
+    magrittr,
+    memoise,
+    processx,
+    promises,
+    purrr,
+    quanteda,
+    rlang,
+    shiny,
+    shinybulma,
+    tangela,
+    zipangu
+Remotes:
+    bnosac/GAlogger,
+    paithov909/tangela,
+    RinteRface/shinybulma,
+    uribo/zipangu
+Suggests:
+    rnev,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
