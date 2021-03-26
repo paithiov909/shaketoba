@@ -34,7 +34,7 @@ Imports:
     zipangu
 Remotes:
     bnosac/GAlogger,
-    paithov909/tangela,
+    paithiov909/tangela,
     RinteRface/shinybulma,
     uribo/zipangu
 Suggests:

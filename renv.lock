@@ -725,22 +725,17 @@
     },
     "remotes": {
       "Package": "remotes",
-      "Version": "2.2.0.9000",
-      "Source": "GitHub",
-      "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteRepo": "remotes",
-      "RemoteUsername": "r-lib",
-      "RemoteRef": "master",
-      "RemoteSha": "cf2b4a9cd899599830469adc54a2958c8388148d",
-      "Hash": "c65287f9580130d2f7ef12f66ab05c90"
+      "Version": "2.2.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "430a0908aee75b1fcba0e62857cab0ce"
     },
     "renv": {
       "Package": "renv",
-      "Version": "0.13.0",
+      "Version": "0.13.1",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "9f10d9db5b50400c348920c5c603385e"
+      "Hash": "be02499761baab60d58b808efd08c3fc"
     },
     "rlang": {
       "Package": "rlang",
@@ -868,15 +863,15 @@
     },
     "tangela": {
       "Package": "tangela",
-      "Version": "0.0.4-4",
+      "Version": "0.0.5",
       "Source": "GitHub",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
       "RemoteRepo": "tangela",
       "RemoteUsername": "paithiov909",
       "RemoteRef": "HEAD",
-      "RemoteSha": "538638e00f0d993f16a70a33baea4c63ebf1f427",
-      "Hash": "144e04e390899dadb1620a0270205196"
+      "RemoteSha": "1eeac7579939bbd8de48bb81a2766549da18d61a",
+      "Hash": "9a15ca8eff5f4e6cf07a9c5aca7bd75d"
     },
     "testthat": {
       "Package": "testthat",
