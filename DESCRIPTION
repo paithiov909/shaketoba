@@ -1,5 +1,5 @@
 Package: shaketoba
-Title: A Shiny Application Powered by 'golem'
+Title: R Port of Ojisan NArikiri Randomized Algorithm
 Version: 0.0.0.9000
 Authors@R: c(
     person("Akiru", "Kato", email = "paithiov909@gmail.com", role = c("cre", "aut")))
@@ -13,31 +13,25 @@ LazyData: true
 RoxygenNote: 7.1.1
 SystemRequirements: Java
 Imports: 
-    attempt,
-    cachem,
-    config,
-    DT,
-    future,
-    glue,
-    golem,
-    htmltools,
-    magrittr,
-    memoise,
-    processx,
-    promises,
-    purrr,
-    quanteda,
-    rlang,
-    shiny,
-    shinybulma,
-    tangela,
-    zipangu
+  cachem,
+  config,
+  dplyr,
+  dqrng,
+  future,
+  golem,
+  memoise,
+  pkgload,
+  promises,
+  purrr,
+  rlang,
+  stringi,
+  shiny,
+  tangela,
+  zipangu
 Remotes:
-    bnosac/GAlogger,
-    paithiov909/tangela,
-    RinteRface/shinybulma,
-    uribo/zipangu
+  paithiov909/tangela
 Suggests:
-    rnev,
-    testthat (>= 3.0.0)
+  devtools,
+  rnev,
+  testthat (>= 3.0.0)
 Config/testthat/edition: 3

@@ -2,30 +2,17 @@
 #'
 #' @param request Internal parameter for `{shiny}`.
 #'     DO NOT REMOVE.
+#'
+#' @keywords internal
 #' @noRd
 app_ui <- function(request) {
-  shinybulma::bulmaNavbarPage(
+  shiny::fluidPage(
     golem_add_external_resources(), ## Leave this function for adding external resources.
-    shiny::div(
-      shinybulma::bulmaNavbarBrand(
-        shinybulma::bulmaNavbarItem(
-          shiny::h1("shaketoba"),
-          href = "#main"
-        ),
-        shinybulma::bulmaNavbarBurger()
-      ),
-      shinybulma::bulmaNavbarMenu(
-        shinybulma::bulmaNavbarEnd(
-          shinybulma::bulmaNavbarItem("テキスト分析", href = "#main"),
-          shinybulma::bulmaNavbarItem("このアプリについて", href = "#about")
-        )
-      )
-    ),
     shiny::div(
       id = "app",
       ## List the first level UI elements here.
-      shinybulma::bulmaNav("main", mod_main_ui("main_pane")),
-      shinybulma::bulmaNav("about", mod_about_ui("about_pane"))
+      # mod_about_ui("main_pane")
+      # mod_about_ui("control_pane")
     )
   )
 }
@@ -35,7 +22,7 @@ app_ui <- function(request) {
 #' This function is internally used to add external
 #' resources inside the Shiny application.
 #'
-#' @importFrom golem add_resource_path activate_js favicon bundle_resources
+#' @keywords internal
 #' @noRd
 golem_add_external_resources <- function() {
   golem::add_resource_path("www", app_sys("app/www"))

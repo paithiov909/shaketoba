@@ -2,13 +2,16 @@
 #'
 #' @param ... A series of options to be used inside the app.
 #' Run shiny application
+#'
 #' @export
-#' @importFrom shiny shinyApp
-#' @importFrom golem with_golem_options
-run_app <- function(
-                    ...) {
-  with_golem_options(
-    app = shinyApp(
+run_app <- function(...) {
+  switch(.Platform$OS.type == "windows",
+    future::plan("multisession"),
+    future::plan("mutlicore")
+  )
+
+  golem::with_golem_options(
+    app = shiny::shinyApp(
       ui = app_ui,
       server = app_server
     ),

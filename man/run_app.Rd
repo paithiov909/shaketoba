@@ -7,7 +7,8 @@
 run_app(...)
 }
 \arguments{
-\item{...}{A series of options to be used inside the app.}
+\item{...}{A series of options to be used inside the app.
+Run shiny application}
 }
 \description{
 Run the Shiny Application

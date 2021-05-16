@@ -18,8 +18,25 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-> A Shiny Application Powered by 'golem'
+> R Port of Ojisan NArikiri Randomized Algorithm
 
-'Shaketoba', also pronounced as 'Saketoba', is salty dried autumn salmon that is known as a traditional food in the Hokkaido and Tohoku regions of Japan.
+## なんだこれは
 
+[ojichat](https://github.com/greymd/ojichat)のR言語版です。
+
+## インストール
+
+rJavaへの依存があるのでJavaが必要です。
+
+```r
+if (!requireNamespace("tangela", quietly = TRUE)) {
+  remotes::install_github("paithiov909/tangela")
+}
+remotes::install_github("paithiov909/shaketoba")
+```
+## 使い方
+
+## ライセンス
+
+MIT
 
