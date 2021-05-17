@@ -1,5 +1,6 @@
 # code to prepare `templates` dataset goes here
 # from: 'https://github.com/greymd/ojichat/blob/master/pattern/onara.go'
+# テンプレート中に埋め込まれていた絵文字は消している
 
 templates <- list(
   greeting = c(
@@ -41,7 +42,7 @@ templates <- list(
     "そういえば、昨日は例の{RESTAURANT}に行ってきたよ。結構いい雰囲気だったから、オススメだよ{EMOJI_POS}",
     "{FIRST_PERSON}は今日から{LOCATION}へ～{EMOJI_POS}",
     "お弁当の{FOOD}が美味しくて、それと一緒に{TARGET_NAME}のことも食べちゃいたいな～{EMOJI_POS}{NANCHATTE}",
-    "本日のランチ<U+0001F374>は奮発して{FOOD}付き{EMOJI_POS}誰だメタボなんて言ったやつは{EMOJI_NEG}",
+    "本日のランチは奮発して{FOOD}付き{EMOJI_POS}誰だメタボなんて言ったやつは{EMOJI_NEG}",
     "出張で{LOCATION}に行ってきたよ{EMOJI_POS}観光でも、行きたいなぁ{EMOJI_POS}モチロン、{TARGET_NAME}とね"
   ),
   cheering = c(
@@ -66,7 +67,7 @@ templates <- list(
     "{TARGET_NAME}、愛しいなぁもう{EMOJI_POS}",
     "{TARGET_NAME}は、スタイルがいいね{EMOJI_POS}",
     "{TARGET_NAME}のお目々、キラキラ{EMOJI_POS}してるね{EMOJI_POS}",
-    "{TARGET_NAME}は、お肌がきれい<U+2728>だね{EMOJI_POS}",
+    "{TARGET_NAME}は、お肌がきれいだね{EMOJI_POS}",
     "{TARGET_NAME}、髪の毛、切ったのかな{EMOJI_ASK}似合いすぎだよ{EMOJI_POS}",
     "{TARGET_NAME}、可愛らしいね{EMOJI_POS}"
   ),

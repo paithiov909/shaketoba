@@ -2,7 +2,7 @@
 % Please edit documentation in R/mod_main_utils_generator.R
 \name{sktb_insert_comma}
 \alias{sktb_insert_comma}
-\title{Insert comma}
+\title{Insert comma after specified pos}
 \usage{
 sktb_insert_comma(message, pos_after = c("助詞", "助動詞"), comma_freq = 0)
 }
@@ -17,5 +17,5 @@ sktb_insert_comma(message, pos_after = c("助詞", "助動詞"), comma_freq = 0)
 character vector.
 }
 \description{
-Insert comma
+Insert comma after specified pos
 }

@@ -4,13 +4,17 @@
 \alias{sktb_sample_message}
 \title{Sample message template}
 \usage{
-sktb_sample_message(merge = list())
+sktb_sample_message(size = 1L, merge = list(), collapse = " ")
 }
 \arguments{
-\item{merge}{list}
+\item{size}{integer.}
+
+\item{merge}{list.}
+
+\item{collapse}{character scalar.}
 }
 \value{
-message template is returned randomly.
+message templates are returned as a charcter vector.
 }
 \description{
 Sample message template

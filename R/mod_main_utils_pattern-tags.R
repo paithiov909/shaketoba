@@ -1,13 +1,80 @@
+#' Convert tags in the message template
 #'
-sktb_convert_tags <- function(message, target_name, emoji_number) {
-  if (rlang::is_empty(target_name)) {
-    target_name <- sktb_sample_first_name()
+#' @param message character vector.
+#' @param target_name character vector.
+#' @param emoji_rep integer
+#' @return character vector.
+#'
+#' @export
+sktb_conv_tags_all <- function(message, target_name = "", emoji_rep = 1L) {
+  if (target_name == "") {
+    target_name <- paste0(sktb_sample_first_name(), sktb_sample_name_suffix(), collapse = "")
+  } else {
+    target_name <- paste0(target_name, sktb_sample_name_suffix(), collapse = "")
   }
+  message <- message %>%
+    stringi::stri_replace_all_regex("\\{TARGET_NAME\\}", target_name) %>%
+    sktb_conv_tags_flex(emoji_rep = emoji_rep) %>%
+    sktb_conv_tags_uniq()
+  return(message)
 }
 
+#' Convert flex tags
 #'
-sktb_combine_multiple_patterns <- function() {
+#' @param message character vector.
+#' @return character vector.
+#'
+#' @keywords internal
+#' @noRd
+sktb_conv_tags_flex <- function(message, emoji_rep = 1L) {
+  purrr::iwalk(
+    list(
+      "\\{EMOJI_POS\\}[\\z]*",
+      "\\{EMOJI_NEG\\}[\\z]*",
+      "\\{EMOJI_NEUT\\}[\\z]*",
+      "\\{EMOJI_ASK\\}[\\z]*"
+    ),
+    function(.x, .y) {
+      message <<- stringi::stri_replace_all_regex(
+        message,
+        .x,
+        dplyr::if_else(
+          emoji_rep > 0,
+          paste0(dqrng::dqsample(flextags[[.y]], emoji_rep, replace = !(length(flextags[[.y]]) < emoji_rep)), collapse = ""),
+          "\u3002"
+        )
+      )
+    }
+  )
+  return(message)
+}
 
+#' Convert unique tags
+#'
+#' @param message character vector.
+#' @return character vector.
+#'
+#' @keywords internal
+#' @noRd
+sktb_conv_tags_uniq <- function(message) {
+  purrr::iwalk(
+    list(
+      "\\{FIRST_PERSON\\}",
+      "\\{DAY_OF_WEEK\\}",
+      "\\{LOCATION\\}",
+      "\\{RESTAURANT\\}",
+      "\\{FOOD\\}",
+      "\\{WEATHER\\}",
+      "\\{NANCHATTE\\}[\\z]*",
+      "\\{HOTEL\\}",
+      "\\{DATE\\}",
+      "\\{METAPHOR\\}"
+    ),
+    function(.x, .y) {
+      message <<- stringi::stri_replace_all_regex(message, .x, dqrng::dqsample(uniqtags[[.y]], 1))
+    }
+  )
+  return(message)
 }
 
 #' Sample Japanese female first names
@@ -18,12 +85,12 @@ sktb_combine_multiple_patterns <- function() {
 #' @export
 sktb_sample_first_name <- function(size = 1L) {
   slice <- dplyr::slice_sample(gimei, n = size, replace = TRUE)
-  switch <- dqrng::dqsample.int(3, 1)
+  sw <- dqrng::dqsample.int(3, 1)
   return(
     dplyr::case_when(
-      switch == 1 ~ slice$kanji,
-      switch == 2 ~ slice$hiragana,
-      switch == 3 ~ slice$katakana
+      sw == 1 ~ slice$kanji,
+      sw == 2 ~ slice$hiragana,
+      sw == 3 ~ slice$katakana
     )
   )
 }
@@ -35,12 +102,12 @@ sktb_sample_first_name <- function(size = 1L) {
 #'
 #' @export
 sktb_sample_name_suffix <- function(size = 1L) {
-  switch <- dqrng::dqrunif(size, 1, 100)
+  sw <- dqrng::dqrunif(size, 1, 100)
   return(
     dplyr::case_when(
-      switch < 5 ~ "",
-      switch < 20 ~ stringi::stri_enc_toutf8("\u30c1\u30e3\u30f3"),
-      switch < 40 ~ stringi::stri_enc_toutf8("\uff81\uff6c\uff9d"),
+      sw < 5 ~ "",
+      sw < 20 ~ stringi::stri_enc_toutf8("\u30c1\u30e3\u30f3"),
+      sw < 40 ~ stringi::stri_enc_toutf8("\uff81\uff6c\uff9d"),
       TRUE ~ stringi::stri_enc_toutf8("\u3061\u3083\u3093")
     )
   )

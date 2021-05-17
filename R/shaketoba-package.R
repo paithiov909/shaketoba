@@ -17,3 +17,9 @@
 #' @docType package
 #' @keywords internal
 "_PACKAGE"
+
+#' pipe export
+#' @export %>%
+#' @export %...>%
+#' @noRd
+NULL

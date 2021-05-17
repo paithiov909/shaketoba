@@ -12,6 +12,7 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
 SystemRequirements: Java
+Depends: R (>= 2.10)
 Imports: 
   cachem,
   config,
@@ -32,6 +33,9 @@ Remotes:
   paithiov909/tangela
 Suggests:
   devtools,
+  jsonlite,
   rnev,
-  testthat (>= 3.0.0)
+  testthat (>= 3.0.0),
+  styler,
+  yaml
 Config/testthat/edition: 3
