@@ -8,9 +8,11 @@
 app_ui <- function(request) {
   shiny::fluidPage(
     golem_add_external_resources(), ## Leave this function for adding external resources.
-    shiny::titlePanel(
-      "Shaketoba | \u304a\u3058\u3055\u3093LINE\u6587\u7ae0\u753b\u50cf\u30b8\u30a7\u30cd\u30ec\u30fc\u30bf",
-      windowTitle = "Shaketoba | \u304a\u3058\u3055\u3093LINE\u6587\u7ae0\u753b\u50cf\u30b8\u30a7\u30cd\u30ec\u30fc\u30bf"
+    shiny::div(
+      class = "page-header",
+      shiny::h1(
+        "Shaketoba | \u304a\u3058\u3055\u3093LINE\u6587\u7ae0\u753b\u50cf\u30b8\u30a7\u30cd\u30ec\u30fc\u30bf"
+      )
     ),
     shiny::wellPanel(
       shiny::includeHTML(app_sys("app/include.html"))
@@ -85,7 +87,7 @@ golem_add_external_resources <- function() {
     golem::favicon(),
     golem::bundle_resources(
       path = app_sys("app/www"),
-      app_title = "shaketoba"
+      app_title = "Shaketoba | \u304a\u3058\u3055\u3093LINE\u6587\u7ae0\u753b\u50cf\u30b8\u30a7\u30cd\u30ec\u30fc\u30bf"
     ),
     metathis::meta_social(
       metathis::meta(),

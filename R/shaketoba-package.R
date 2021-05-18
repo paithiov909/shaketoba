@@ -6,11 +6,9 @@
 #' @import shiny
 #' @import stringi
 #' @import tangela
-#' @importFrom cachem cache_mem
 #' @importFrom config get
 #' @importFrom metathis meta meta_social
 #' @importFrom meme meme
-#' @importFrom memoise memoise
 #' @importFrom rlang is_empty arg_match
 #' @importFrom sysfonts font_paths font_add
 #' @importFrom zipangu str_conv_hirakana

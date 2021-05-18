@@ -14,14 +14,12 @@ RoxygenNote: 7.1.1
 SystemRequirements: Java
 Depends: R (>= 2.10)
 Imports: 
-  cachem,
   config,
   dplyr,
   dqrng,
   golem,
   metathis,
   meme,
-  memoise,
   pkgload,
   purrr,
   rlang,
