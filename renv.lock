@@ -518,6 +518,13 @@
       "Repository": "CRAN",
       "Hash": "a0bc51650201a56d00a4798523cc91b3"
     },
+    "metathis": {
+      "Package": "metathis",
+      "Version": "1.0.3",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "5056a889bccd51d78697799bc25ece39"
+    },
     "mgcv": {
       "Package": "mgcv",
       "Version": "1.8-31",
