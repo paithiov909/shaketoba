@@ -27,7 +27,7 @@ remotes::install_github("paithiov909/shaketoba")
 
 ### As a Shiny application
 
-[Shaketoba \| おじさんLINE文章画像ジェネレータ](#)
+[Shaketoba \| おじさんLINE文章画像ジェネレータ](https://paithiov909.shinyapps.io/shaketoba/)
 
 ### As an R package
 

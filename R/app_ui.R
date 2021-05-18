@@ -90,7 +90,7 @@ golem_add_external_resources <- function() {
     metathis::meta_social(
       metathis::meta(),
       title = "Shaketoba | \u304a\u3058\u3055\u3093LINE\u6587\u7ae0\u753b\u50cf\u30b8\u30a7\u30cd\u30ec\u30fc\u30bf",
-      url = "",
+      url = "https://paithiov909.shinyapps.io/shaketoba/",
       image = "https://raw.githack.com/paithiov909/shaketoba/main/man/figures/plot.png",
       description = "R Port of Ojisan NArikiri Randomized Algorithm",
       twitter_card_type = "summary_large_image",
