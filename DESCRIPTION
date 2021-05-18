@@ -1,6 +1,6 @@
 Package: shaketoba
 Title: R Port of Ojisan NArikiri Randomized Algorithm
-Version: 0.0.0.9000
+Version: 0.1.0.900
 Authors@R: c(
     person("Akiru", "Kato", email = "paithiov909@gmail.com", role = c("cre", "aut")))
 Description: 'Shaketoba', also pronounced as 'Saketoba', is salty dried autumn salmon
@@ -18,15 +18,15 @@ Imports:
   config,
   dplyr,
   dqrng,
-  future,
   golem,
+  metathis,
+  meme,
   memoise,
-  pkgload,
-  promises,
   purrr,
   rlang,
   stringi,
   shiny,
+  sysfonts,
   tangela,
   zipangu
 Remotes:
@@ -34,6 +34,7 @@ Remotes:
 Suggests:
   devtools,
   jsonlite,
+  processx,
   rnev,
   testthat (>= 3.0.0),
   styler,

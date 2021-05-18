@@ -1,6 +1,5 @@
-skip_if(TRUE, "Skip shiny app loading")
-
-library(golem)
+require(golem)
+skip_if(golem::app_prod(), "Skip shiny app loading")
 
 test_that("app ui", {
   ui <- app_ui()

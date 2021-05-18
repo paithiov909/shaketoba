@@ -5,11 +5,6 @@
 #'
 #' @export
 run_app <- function(...) {
-  switch(.Platform$OS.type == "windows",
-    future::plan("multisession"),
-    future::plan("mutlicore")
-  )
-
   golem::with_golem_options(
     app = shiny::shinyApp(
       ui = app_ui,

@@ -7,7 +7,7 @@ uniqtags <- list(
     "月", "火", "水", "木", "金", "土", "日"
   ),
   location = c(
-    stringr::str_sub(zipangu::jpnprefs$prefecture_kanji, 1, -2)
+    stringi::stri_sub(zipangu::jpnprefs$prefecture_kanji, 1, -2)
   ),
   restaurant = jsonlite::read_json("data-raw/restaurant.json", simplifyVector = TRUE),
   food = jsonlite::read_json("data-raw/food.json", simplifyVector = TRUE),

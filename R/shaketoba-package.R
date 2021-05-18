@@ -8,18 +8,17 @@
 #' @import tangela
 #' @importFrom cachem cache_mem
 #' @importFrom config get
-#' @importFrom future future plan
+#' @importFrom metathis meta meta_social
+#' @importFrom meme meme
 #' @importFrom memoise memoise
-#' @importFrom pkgload is_dev_package
-#' @importFrom promises %...>%
 #' @importFrom rlang is_empty arg_match
+#' @importFrom sysfonts font_paths font_add
 #' @importFrom zipangu str_conv_hirakana
 #' @docType package
 #' @keywords internal
 "_PACKAGE"
 
-#' pipe export
+#' pipe re-export
 #' @export %>%
-#' @export %...>%
 #' @noRd
 NULL

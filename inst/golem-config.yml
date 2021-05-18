@@ -1,6 +1,6 @@
 default:
   golem_name: shaketoba
-  golem_version: 0.0.0.9000
+  golem_version: 0.1.0.900
   app_prod: no
 production:
   app_prod: yes

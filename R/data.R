@@ -17,3 +17,16 @@
 #'
 #' @source \url{https://github.com/greymd/ojichat}
 "uniqtags"
+
+#' Illustrations
+#' @keywords internal
+#' @noRd
+sktb_images <- function() {
+  c(
+    "illust/50th_beer.png",
+    "illust/fashion_osyare_middle_man.png",
+    "illust/peterpan_syndrome.png",
+    "illust/sensu_salaryman.png",
+    "illust/tehepero3_man.png"
+  )
+}
