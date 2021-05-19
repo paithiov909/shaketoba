@@ -4,7 +4,7 @@
 \alias{sktb_insert_comma}
 \title{Insert comma after specified pos}
 \usage{
-sktb_insert_comma(message, pos_after = c("助詞", "助動詞"), comma_freq = 0)
+sktb_insert_comma(message, pos_after = c("ADP", "AUX"), comma_freq = 0)
 }
 \arguments{
 \item{message}{character scalar.}

@@ -4,12 +4,14 @@
 \alias{sktb_plot_ojichat}
 \title{Plot an ojichat meme}
 \usage{
-sktb_plot_ojichat(str, img = NULL)
+sktb_plot_ojichat(str, img = NULL, split = "EOS")
 }
 \arguments{
 \item{str}{ojichat message.}
 
 \item{img}{passed to \code{meme::meme()}.}
+
+\item{split}{character scalar.}
 }
 \value{
 object returned from \code{meme::meme}.

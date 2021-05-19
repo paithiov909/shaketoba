@@ -22,34 +22,15 @@ knitr::opts_chunk$set(
 
 ## なんだこれは
 
-[ojichat](https://github.com/greymd/ojichat)のR言語版です。
+[greymd/ojichat](https://github.com/greymd/ojichat)のR言語版です。
 
-## インストール
-
-rJavaへの依存があるのでJavaが必要です。
-
-```r
-if (!requireNamespace("tangela", quietly = TRUE)) {
-  remotes::install_github("paithiov909/tangela")
-}
-remotes::install_github("paithiov909/shaketoba")
-```
 ## 使い方
 
-### As a Shiny application
+Shinyアプリとして利用できます。
 
-[Shaketoba | おじさんLINE文章画像ジェネレータ](https://paithiov909.shinyapps.io/shaketoba/)
+> [Shaketoba | おじさんLINE文章画像ジェネレータ](https://paithiov909.shinyapps.io/shaketoba/)
 
-### As an R package
-
-```r
-chat_message <- sktb_sample_message() %>%
-  sktb_conv_ojichat(emoji_rep = 3L, comma_freq = 0.2)
-
-sktb_plot_ojichat(chat_message)
-```
-
-こういう感じの画像をプロットできます。
+たぶんこういう感じの画像をプロットできます。
 
 ![sktb-plot-sample](https://raw.githack.com/paithiov909/shaketoba/main/man/figures/plot.png)
 

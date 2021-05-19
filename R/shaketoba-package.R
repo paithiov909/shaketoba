@@ -5,12 +5,13 @@
 #' @import purrr
 #' @import shiny
 #' @import stringi
-#' @import tangela
 #' @importFrom config get
 #' @importFrom metathis meta meta_social
 #' @importFrom meme meme
 #' @importFrom rlang is_empty arg_match
+#' @importFrom showtext showtext_auto
 #' @importFrom sysfonts font_paths font_add
+#' @importFrom udpipe udpipe_load_model udpipe
 #' @importFrom zipangu str_conv_hirakana
 #' @docType package
 #' @keywords internal

@@ -37,6 +37,7 @@ rsconnect/
 
 doc
 inst/doc
+inst/models/*.udpipe
 Meta
 
 dev

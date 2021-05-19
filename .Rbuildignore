@@ -2,6 +2,7 @@
 ^renv\.lock$
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^\.fonts$
 ^data-raw$
 ^dev$
 ^LICENSE\.md$

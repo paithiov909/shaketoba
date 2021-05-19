@@ -7,7 +7,7 @@
 sktb_conv_ojichat(
   message,
   target_name = "",
-  pos_after = c("助詞", "助動詞"),
+  pos_after = c("ADP", "AUX"),
   emoji_rep = 4L,
   comma_freq = runif(1, 0, 1)
 )

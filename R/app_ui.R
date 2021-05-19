@@ -53,7 +53,7 @@ app_ui_control <- function(id) {
     shiny::checkboxGroupInput(
       ns("pos"),
       "\u300c\u3001\u300d\u304c\u5f8c\u7d9a\u3059\u308b\u54c1\u8a5e",
-      c("\u52a9\u8a5e" = "\u52a9\u8a5e", "\u52a9\u52d5\u8a5e" = "\u52a9\u52d5\u8a5e")
+      c("\u52a9\u8a5e" = "ADP", "\u52a9\u52d5\u8a5e" = "AUX")
     ),
     shiny::sliderInput(
       ns("emoji"),

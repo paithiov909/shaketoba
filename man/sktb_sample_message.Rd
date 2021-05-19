@@ -8,7 +8,7 @@ sktb_sample_message(
   size = 1L,
   merge = list(),
   tail = sample.int(3, 1),
-  collapse = " "
+  collapse = ""
 )
 }
 \arguments{

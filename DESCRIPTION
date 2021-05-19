@@ -11,31 +11,29 @@ BugReports: https://github.com/paithiov909/shaketoba/issues
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
-SystemRequirements: Java
 Depends: R (>= 2.10)
-Imports: 
+Imports:
   config,
   dplyr,
   dqrng,
   golem,
   metathis,
   meme,
-  pkgload,
   purrr,
   rlang,
-  stringi,
+  showtext,
   shiny,
+  stringi,
   sysfonts,
-  tangela,
+  udpipe,
   zipangu
-Remotes:
-  paithiov909/tangela
 Suggests:
   devtools,
   jsonlite,
+  pkgload,
   processx,
   renv,
-  testthat (>= 3.0.0),
   styler,
+  testthat (>= 3.0.0),
   yaml
 Config/testthat/edition: 3

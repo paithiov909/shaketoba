@@ -1,12 +1,21 @@
-#' Thin wrapper of `tangela::kuromoji`
-#'
 #' @keywords internal
 #' @noRd
-tokenize_kuromoji <- function(message) {
-  tangela::kuromoji(message)
+.opt <- NULL
+
+#' @keywords internal
+#' @noRd
+.mdl <- NULL
+
+#' @keywords internal
+#' @noRd
+sktb_udpipe <- function(message) {
+  udpipe::udpipe(stringi::stri_enc_toutf8(message), .mdl)
 }
 
 #' On load
+#'
+#' @details
+#' \code{grDevices::x11}
 #'
 #' @param libname libname
 #' @param pkgname pkgname
@@ -15,14 +24,38 @@ tokenize_kuromoji <- function(message) {
 #' @noRd
 .onLoad <- function(libname, pkgname) {
 
-  ## Register 'SetoFont' internally.
-  sysfonts::font_paths(system.file("fonts", package = pkgname))
-  sysfonts::font_add("SetoFont", "setofont-sp-merged.ttf")
+  ## Preload udpipe model
+  model_path <- ifelse(Sys.getenv("SKTB_UDMODEL_PATH") != "",
+    file.path("SKTB_UDMODEL_PATH"),
+    system.file("models/japanese-gsd-ud-2.5-191206.udpipe", package = pkgname)
+  )
+  .mdl <<- udpipe::udpipe_load_model(model_path)
 
+  sysfonts::font_add(
+    "SetoFont-SP",
+    system.file("fonts/setofont-sp-merged.ttf", package = pkgname)
+  )
+
+  ## Register 'SetoFont-SP' internally.
   if (.Platform$OS.type == "windows") {
     windowsFonts(
-      "SetoFont" = windowsFont("SetoFont")
+      "SetoFont-SP" = windowsFont("SetoFont-SP")
     )
-    require("fontregisterer", quietly = TRUE)
   }
+
+  ## Set `par(family)` under unix-alikes
+  .opt <<- par(no.readonly = TRUE)
+  if (.Platform$OS.type == "unix") {
+    par(family = "SetoFont-SP")
+  }
+
+  ## Init showtext
+  showtext::showtext_auto()
+}
+
+#' @keywords internal
+#' @noRd
+.onDetach <- function(libpath) {
+  if (.Platform$OS.type == "unix") { par(.opt) }
+  showtext::showtext_auto(FALSE)
 }

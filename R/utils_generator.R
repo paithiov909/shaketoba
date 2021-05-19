@@ -9,12 +9,12 @@
 #' @export
 sktb_conv_ojichat <- function(message,
                               target_name = "",
-                              pos_after = c("\u52a9\u8a5e", "\u52a9\u52d5\u8a5e"),
+                              pos_after = c("ADP", "AUX"),
                               emoji_rep = 4L,
                               comma_freq = runif(1, 0, 1)) {
   message <- message %>%
-    sktb_conv_tags_all(target_name, emoji_rep) %>%
-    sktb_insert_comma(pos_after, comma_freq)
+    sktb_insert_comma(pos_after, comma_freq) %>%
+    sktb_conv_tags_all(target_name, emoji_rep)
   return(message)
 }
 
@@ -27,7 +27,7 @@ sktb_conv_ojichat <- function(message,
 #' @return message templates are returned as a charcter vector.
 #'
 #' @export
-sktb_sample_message <- function(size = 1L, merge = list(), tail = sample.int(3, 1), collapse = " ") {
+sktb_sample_message <- function(size = 1L, merge = list(), tail = sample.int(3, 1), collapse = "") {
   onara <- dqrng::dqsample(sktb_message_pattern(merge), size, replace = TRUE)
   names(onara) <- NULL
   onara <- purrr::map_chr(onara, function(emotions) {
@@ -80,24 +80,19 @@ sktb_conv_tail_charclass <- function(message, tail = 1L, to = c("katakana", "hir
 #'
 #' @export
 sktb_insert_comma <- function(message,
-                              pos_after = c("\u52a9\u8a5e", "\u52a9\u52d5\u8a5e"),
+                              pos_after = c("ADP", "AUX"),
                               comma_freq = 0) {
   if (comma_freq == 0) {
     return(message)
   }
-  result <- purrr::map_chr(message, function(str) {
-    tokens <- tokenize_kuromoji(str)
-    chars <- purrr::map_chr(tokens, function(elem) {
-      pos_tag <- stringi::stri_split_fixed(elem$feature, ",")
-      return(
-        dplyr::if_else(
-          pos_tag[[1]][1] %in% pos_after && pos_tag[[1]][2] != "\u7d42\u52a9\u8a5e" && dqrng::dqrunif(1, 0, 1) <= comma_freq,
-          paste0(elem$surface, "\u3001", collapse = ""),
-          elem$surface
-        )
-      )
-    })
-    return(paste0(chars, collapse = ""))
-  })
-  return(result)
+  tokens <- sktb_udpipe(message)
+  result <- tokens %>%
+    dplyr::rowwise() %>%
+    dplyr::mutate(token = dplyr::if_else(
+      upos %in% pos_after && dqrng::dqrunif(1, 0, 1) <= comma_freq,
+      paste0(token, "\u3001", collapse = ""),
+      token
+    )) %>%
+    dplyr::pull(token)
+  return(paste0(result, collapse = ""))
 }
