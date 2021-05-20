@@ -184,13 +184,6 @@
       "Repository": "CRAN",
       "Hash": "31d77b09f63550cee9ecb5a08bf76e8f"
     },
-    "cpp11": {
-      "Package": "cpp11",
-      "Version": "0.2.7",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "730eebcc741a5c36761f7d4d0f5e37b8"
-    },
     "crayon": {
       "Package": "crayon",
       "Version": "1.4.1",
@@ -302,18 +295,6 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "77bd60a6157420d4ffa93b27cf6a58b8"
-    },
-    "fontregisterer": {
-      "Package": "fontregisterer",
-      "Version": "0.2",
-      "Source": "GitHub",
-      "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteRepo": "fontregisterer",
-      "RemoteUsername": "Gedevan-Aleksizde",
-      "RemoteRef": "HEAD",
-      "RemoteSha": "2c3d31908bb54afc27b870284ac36cdafb948572",
-      "Hash": "9af602f4c44fd12427821c424ab8e495"
     },
     "fs": {
       "Package": "fs",
@@ -818,13 +799,6 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "6a750650ae5e5ba11b45cb5012bd6167"
-    },
-    "systemfonts": {
-      "Package": "systemfonts",
-      "Version": "1.0.2",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "f2e17ba09737e2e7e2ec40fc1f9b6e08"
     },
     "testthat": {
       "Package": "testthat",

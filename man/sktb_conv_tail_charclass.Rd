@@ -11,7 +11,7 @@ sktb_conv_tail_charclass(message, tail = 1L, to = c("katakana", "hiragana"))
 
 \item{tail}{integer.}
 
-\item{to}{this argument is passed to \code{zipangu::str_conv_hirakana}.}
+\item{to}{this argument is passed to \code{zipangu::str_conv_hirakana()}.}
 }
 \value{
 list of character.

@@ -2,14 +2,13 @@
 % Please edit documentation in R/run_app.R
 \name{run_app}
 \alias{run_app}
-\title{Run the Shiny Application}
+\title{Run the application}
 \usage{
 run_app(...)
 }
 \arguments{
-\item{...}{A series of options to be used inside the app.
-Run shiny application}
+\item{...}{A series of options to be used inside the app.}
 }
 \description{
-Run the Shiny Application
+Run the application
 }

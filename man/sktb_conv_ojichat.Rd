@@ -15,11 +15,11 @@ sktb_conv_ojichat(
 \arguments{
 \item{message}{message template}
 
-\item{target_name}{passed to \code{sktb_conv_tags_all}.}
+\item{target_name}{passed to \code{sktb_conv_tags_all()}.}
 
-\item{pos_after}{passed to \code{sktb_insert_comma}.}
+\item{pos_after}{passed to \code{sktb_insert_comma()}.}
 
-\item{comma_freq}{passed to \code{sktb_insert_comma}.}
+\item{comma_freq}{passed to \code{sktb_insert_comma()}.}
 }
 \value{
 character vector.

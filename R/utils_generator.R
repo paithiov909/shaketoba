@@ -1,9 +1,9 @@
 #' Convert message templates into ojichat
 #'
 #' @param message message template
-#' @param target_name passed to \code{sktb_conv_tags_all}.
-#' @param pos_after passed to \code{sktb_insert_comma}.
-#' @param comma_freq passed to \code{sktb_insert_comma}.
+#' @param target_name passed to \code{sktb_conv_tags_all()}.
+#' @param pos_after passed to \code{sktb_insert_comma()}.
+#' @param comma_freq passed to \code{sktb_insert_comma()}.
 #' @return character vector.
 #'
 #' @export
@@ -21,8 +21,8 @@ sktb_conv_ojichat <- function(message,
 #' Sample message template
 #'
 #' @param size integer.
-#' @param merge list. internaly passed to \code{sktb_message_pattern}.
-#' @param tail integer. passed to \code{sktb_conv_tail_charclass}.
+#' @param merge list. internaly passed to \code{sktb_message_pattern()}.
+#' @param tail integer. passed to \code{sktb_conv_tail_charclass()}.
 #' @param collapse character scalar.
 #' @return message templates are returned as a charcter vector.
 #'
@@ -45,7 +45,7 @@ sktb_sample_message <- function(size = 1L, merge = list(), tail = sample.int(3, 
 #'
 #' @param message character vector.
 #' @param tail integer.
-#' @param to this argument is passed to \code{zipangu::str_conv_hirakana}.
+#' @param to this argument is passed to \code{zipangu::str_conv_hirakana()}.
 #' @return list of character.
 #'
 #' @export

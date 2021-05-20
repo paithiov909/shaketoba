@@ -7,7 +7,6 @@
 #' @import stringi
 #' @importFrom config get
 #' @importFrom metathis meta meta_social
-#' @importFrom meme meme
 #' @importFrom rlang is_empty arg_match
 #' @importFrom showtext showtext_auto
 #' @importFrom sysfonts font_paths font_add

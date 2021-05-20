@@ -1,7 +1,7 @@
 #' Onara message patterns
 #'
-#' @param merge list
-#' @return  list
+#' @param merge list.
+#' @return list.
 #'
 #' @keywords internal
 #' @noRd

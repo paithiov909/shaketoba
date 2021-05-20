@@ -14,9 +14,6 @@ sktb_udpipe <- function(message) {
 
 #' On load
 #'
-#' @details
-#' \code{grDevices::x11}
-#'
 #' @param libname libname
 #' @param pkgname pkgname
 #'
@@ -53,9 +50,13 @@ sktb_udpipe <- function(message) {
   showtext::showtext_auto()
 }
 
+#' On unload
+#'
+#' @param libpath libpath
+#'
 #' @keywords internal
 #' @noRd
-.onDetach <- function(libpath) {
+.onUnload <- function(libpath) {
   if (.Platform$OS.type == "unix") { par(.opt) }
   showtext::showtext_auto(FALSE)
 }

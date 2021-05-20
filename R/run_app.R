@@ -1,7 +1,6 @@
-#' Run the Shiny Application
+#' Run the application
 #'
 #' @param ... A series of options to be used inside the app.
-#' Run shiny application
 #'
 #' @export
 run_app <- function(...) {

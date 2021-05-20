@@ -1,6 +1,6 @@
 #' The application User-Interface
 #'
-#' @param request Internal parameter for `{shiny}`.
+#' @param request Internal parameter for shiny.
 #'     DO NOT REMOVE.
 #'
 #' @keywords internal
@@ -74,7 +74,7 @@ app_ui_control <- function(id) {
   )
 }
 
-#' Add external Resources to the Application
+#' Add external resources to the application
 #'
 #' This function is internally used to add external
 #' resources inside the Shiny application.
@@ -98,6 +98,7 @@ golem_add_external_resources <- function() {
       twitter_card_type = "summary_large_image",
       og_type = "website",
       og_locale = "ja_JP"
-    )
+    ),
+    shiny::includeHTML(app_sys("app/scripts.html"))
   )
 }

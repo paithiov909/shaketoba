@@ -9,3 +9,5 @@
 ^README\.Rmd$
 ^app\.R$
 ^rsconnect$
+^docs$
+^pkgdown$
