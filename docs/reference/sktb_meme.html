@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Convert charclass of the last nth characters — sktb_conv_tail_charclass • shaketoba</title>
+<title>meme — sktb_meme • shaketoba</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Convert charclass of the last nth characters — sktb_conv_tail_charclass" />
-<meta property="og:description" content="Convert charclass of the last nth characters" />
+<meta property="og:title" content="meme — sktb_meme" />
+<meta property="og:description" content="create meme" />
 
 
 
@@ -108,38 +108,84 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Convert charclass of the last nth characters</h1>
-    <small class="dont-index">Source: <a href='https://github.com/paithiov909/shaketoba/blob/master/R/utils_generator.R'><code>R/utils_generator.R</code></a></small>
-    <div class="hidden name"><code>sktb_conv_tail_charclass.Rd</code></div>
+    <h1>meme</h1>
+    <small class="dont-index">Source: <a href='https://github.com/paithiov909/shaketoba/blob/master/R/utils_plot.R'><code>R/utils_plot.R</code></a></small>
+    <div class="hidden name"><code>sktb_meme.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Convert charclass of the last nth characters</p>
+    <p>create meme</p>
     </div>
 
-    <pre class="usage"><span class='fu'>sktb_conv_tail_charclass</span><span class='op'>(</span><span class='va'>message</span>, tail <span class='op'>=</span> <span class='fl'>1L</span>, to <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"katakana"</span>, <span class='st'>"hiragana"</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>sktb_meme</span><span class='op'>(</span>
+  <span class='va'>img</span>,
+  upper <span class='op'>=</span> <span class='cn'>NULL</span>,
+  lower <span class='op'>=</span> <span class='cn'>NULL</span>,
+  size <span class='op'>=</span> <span class='st'>"auto"</span>,
+  color <span class='op'>=</span> <span class='st'>"snow"</span>,
+  font <span class='op'>=</span> <span class='st'>"SetoFont-SP"</span>,
+  vjust <span class='op'>=</span> <span class='fl'>0.4</span>,
+  bgcolor <span class='op'>=</span> <span class='st'>"violet"</span>,
+  r <span class='op'>=</span> <span class='fl'>0.2</span>,
+  density <span class='op'>=</span> <span class='cn'>NULL</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>message</th>
-      <td><p>character vector.</p></td>
+      <th>img</th>
+      <td><p>path or url</p></td>
     </tr>
     <tr>
-      <th>tail</th>
-      <td><p>integer.</p></td>
+      <th>upper</th>
+      <td><p>upper text</p></td>
     </tr>
     <tr>
-      <th>to</th>
-      <td><p>this argument is passed to <code><a href='https://uribo.github.io/zipangu/reference/str_jconv.html'>zipangu::str_conv_hirakana()</a></code>.</p></td>
+      <th>lower</th>
+      <td><p>lower text</p></td>
+    </tr>
+    <tr>
+      <th>size</th>
+      <td><p>size of text</p></td>
+    </tr>
+    <tr>
+      <th>color</th>
+      <td><p>color of text</p></td>
+    </tr>
+    <tr>
+      <th>font</th>
+      <td><p>font family of text</p></td>
+    </tr>
+    <tr>
+      <th>vjust</th>
+      <td><p>vertical adjustment of captions</p></td>
+    </tr>
+    <tr>
+      <th>bgcolor</th>
+      <td><p>background color of shadow text</p></td>
+    </tr>
+    <tr>
+      <th>r</th>
+      <td><p>ratio of shadow text</p></td>
+    </tr>
+    <tr>
+      <th>density</th>
+      <td><p>resolution to render pdf or svg</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>list of character.</p>
+    <p>grob object</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
+    <p>guangchuang yu</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='va'>f</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span><span class='op'>(</span><span class='st'>"angry8.jpg"</span>, package<span class='op'>=</span><span class='st'>"meme"</span><span class='op'>)</span>
+<span class='fu'>meme</span><span class='op'>(</span><span class='va'>f</span>, <span class='st'>"code"</span>, <span class='st'>"all the things!"</span>, font <span class='op'>=</span> <span class='st'>"Helvetica"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='error'>Error in meme(f, "code", "all the things!", font = "Helvetica"):  関数 "meme" を見つけることができませんでした </span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

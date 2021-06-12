@@ -4,17 +4,17 @@
 \alias{sktb_plot_ojichat}
 \title{Plot an ojichat meme}
 \usage{
-sktb_plot_ojichat(str, img = NULL, split = "EOS")
+sktb_plot_ojichat(str, img = NULL, split = " ")
 }
 \arguments{
 \item{str}{ojichat message.}
 
-\item{img}{passed to \code{meme::meme()}.}
+\item{img}{passed to \code{sktb_meme()}.}
 
-\item{split}{character scalar.}
+\item{split}{character scalar passed to \code{stringi::stri_replace_all_fixed()} (NOT reprex).}
 }
 \value{
-object returned from \code{meme::meme()}.
+object returned from \code{sktb_meme()}.
 }
 \description{
 Plot an ojichat meme

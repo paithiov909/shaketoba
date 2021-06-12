@@ -43,6 +43,12 @@ app_ui_main <- function(id) {
 #' @noRd
 app_ui_control <- function(id) {
   ns <- shiny::NS(id)
+  # label
+  pos_label <- c(joshi = "ADP", jodoshi = "AUX")
+  names(pos_label) <- c(
+    enc2utf8("\u52a9\u8a5e"),
+    enc2utf8("\u52a9\u52d5\u8a5e")
+  )
   shiny::tagList(
     shiny::textInput(
       ns("name"),
@@ -53,7 +59,7 @@ app_ui_control <- function(id) {
     shiny::checkboxGroupInput(
       ns("pos"),
       "\u300c\u3001\u300d\u304c\u5f8c\u7d9a\u3059\u308b\u54c1\u8a5e",
-      c("\u52a9\u8a5e" = "ADP", "\u52a9\u52d5\u8a5e" = "AUX")
+      pos_label
     ),
     shiny::sliderInput(
       ns("emoji"),
@@ -93,7 +99,7 @@ golem_add_external_resources <- function() {
       metathis::meta(),
       title = "Shaketoba | \u304a\u3058\u3055\u3093LINE\u6587\u7ae0\u753b\u50cf\u30b8\u30a7\u30cd\u30ec\u30fc\u30bf",
       url = "https://paithiov909.shinyapps.io/shaketoba/",
-      image = "https://raw.githack.com/paithiov909/shaketoba/main/man/figures/plot.png",
+      image = "https://rawcdn.githack.com/paithiov909/shaketoba/7699e14ca72461077b0942a44b1457fb787cbf86/man/figures/plot.png",
       description = "R Port of Ojisan NArikiri Randomized Algorithm",
       twitter_card_type = "summary_large_image",
       og_type = "website",

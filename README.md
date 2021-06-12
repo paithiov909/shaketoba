@@ -21,7 +21,7 @@ Shinyアプリとして利用できます。
 
 たぶんこういう感じの画像をプロットできます。
 
-![sktb-plot-sample](https://raw.githack.com/paithiov909/shaketoba/main/man/figures/plot.png)
+![sktb-plot-sample](https://rawcdn.githack.com/paithiov909/shaketoba/7699e14ca72461077b0942a44b1457fb787cbf86/man/figures/plot.png)
 
 ## ライセンス
 

@@ -29,14 +29,13 @@ sktb_conv_ojichat <- function(message,
 #' @export
 sktb_sample_message <- function(size = 1L, merge = list(), tail = sample.int(3, 1), collapse = "") {
   onara <- dqrng::dqsample(sktb_message_pattern(merge), size, replace = TRUE)
-  names(onara) <- NULL
-  onara <- purrr::map_chr(onara, function(emotions) {
+  onara <- purrr::map_chr(unname(onara), function(emotions) {
     messages <- lapply(emotions, function(elem) {
       emotion <- purrr::pluck(templates, elem)
       message <- dqrng::dqsample(emotion, 1)
       sktb_conv_tail_charclass(message, tail = tail)
     })
-    paste0(unlist(messages, use.names = FALSE), collapse = collapse)
+    stringi::stri_c(unlist(messages, use.names = FALSE), collapse = collapse)
   })
   return(onara)
 }
@@ -54,7 +53,12 @@ sktb_conv_tail_charclass <- function(message, tail = 1L, to = c("katakana", "hir
     return(message)
   }
   to <- rlang::arg_match(to)
-  message <- stringi::stri_split_boundaries(message)
+  message <- stringi::stri_split_boundaries(
+    ## This function is locale-sensitive.
+    ## See `?stringi::about_search_coll`
+    message,
+    opts_brkiter = stringi::stri_opts_brkiter("character", "ja_JP")
+  )
   message <-
     lapply(message, function(elem) {
       purrr::imap_chr(
@@ -67,7 +71,7 @@ sktb_conv_tail_charclass <- function(message, tail = 1L, to = c("katakana", "hir
       )
     })
   return(lapply(message, function(elem) {
-    paste0(elem, collapse = "")
+    stringi::stri_c(elem, collapse = "")
   }))
 }
 
@@ -90,9 +94,9 @@ sktb_insert_comma <- function(message,
     dplyr::rowwise() %>%
     dplyr::mutate(token = dplyr::if_else(
       upos %in% pos_after && dqrng::dqrunif(1, 0, 1) <= comma_freq,
-      paste0(token, "\u3001", collapse = ""),
+      stringi::stri_c(token, stringi::stri_enc_toutf8("\u3001"), collapse = ""),
       token
     )) %>%
     dplyr::pull(token)
-  return(paste0(result, collapse = ""))
+  return(stringi::stri_c(result, collapse = ""))
 }

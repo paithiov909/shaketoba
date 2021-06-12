@@ -1,13 +1,7 @@
-#' @keywords internal
-#' @noRd
-.opt <- NULL
-
-#' @keywords internal
 #' @noRd
 .mdl <- NULL
 
 #' @keywords internal
-#' @noRd
 sktb_udpipe <- function(message) {
   udpipe::udpipe(stringi::stri_enc_toutf8(message), .mdl)
 }
@@ -18,7 +12,6 @@ sktb_udpipe <- function(message) {
 #' @param pkgname pkgname
 #'
 #' @keywords internal
-#' @noRd
 .onLoad <- function(libname, pkgname) {
 
   ## Preload udpipe model
@@ -28,23 +21,12 @@ sktb_udpipe <- function(message) {
   )
   .mdl <<- udpipe::udpipe_load_model(model_path)
 
+  ## Register 'SetoFont-SP' internally.
   sysfonts::font_add(
     "SetoFont-SP",
     system.file("fonts/setofont-sp-merged.ttf", package = pkgname)
   )
-
-  ## Register 'SetoFont-SP' internally.
-  if (.Platform$OS.type == "windows") {
-    windowsFonts(
-      "SetoFont-SP" = windowsFont("SetoFont-SP")
-    )
-  }
-
-  ## Set `par(family)` under unix-alikes
-  .opt <<- par(no.readonly = TRUE)
-  if (.Platform$OS.type == "unix") {
-    par(family = "SetoFont-SP")
-  }
+  if (.Platform$OS.type == "windows") windowsFonts("SetoFont-SP" = windowsFont("SetoFont-SP"))
 
   ## Init showtext
   showtext::showtext_auto()
@@ -55,8 +37,6 @@ sktb_udpipe <- function(message) {
 #' @param libpath libpath
 #'
 #' @keywords internal
-#' @noRd
 .onUnload <- function(libpath) {
-  if (.Platform$OS.type == "unix") { par(.opt) }
   showtext::showtext_auto(FALSE)
 }

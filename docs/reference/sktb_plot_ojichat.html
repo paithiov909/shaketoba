@@ -117,7 +117,7 @@
     <p>Plot an ojichat meme</p>
     </div>
 
-    <pre class="usage"><span class='fu'>sktb_plot_ojichat</span><span class='op'>(</span><span class='va'>str</span>, img <span class='op'>=</span> <span class='cn'>NULL</span>, split <span class='op'>=</span> <span class='st'>"EOS"</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>sktb_plot_ojichat</span><span class='op'>(</span><span class='va'>str</span>, img <span class='op'>=</span> <span class='cn'>NULL</span>, split <span class='op'>=</span> <span class='st'>" "</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -128,17 +128,17 @@
     </tr>
     <tr>
       <th>img</th>
-      <td><p>passed to <code><a href='https://rdrr.io/pkg/meme/man/meme.html'>meme::meme()</a></code>.</p></td>
+      <td><p>passed to <code><a href='sktb_meme.html'>sktb_meme()</a></code>.</p></td>
     </tr>
     <tr>
       <th>split</th>
-      <td><p>character scalar.</p></td>
+      <td><p>character scalar passed to <code><a href='https://rdrr.io/pkg/stringi/man/stri_replace.html'>stringi::stri_replace_all_fixed()</a></code> (NOT reprex).</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>object returned from <code><a href='https://rdrr.io/pkg/meme/man/meme.html'>meme::meme()</a></code>.</p>
+    <p>object returned from <code><a href='sktb_meme.html'>sktb_meme()</a></code>.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -151,7 +151,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Akiru Kato.</p>
+  <p>Developed by Akiru Kato, Guangchuang Yu.</p>
 </div>
 
 <div class="pkgdown">

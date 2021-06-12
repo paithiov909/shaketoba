@@ -8,9 +8,9 @@
 #' @export
 sktb_conv_tags_all <- function(message, target_name = "", emoji_rep = 1L) {
   if (target_name == "") {
-    target_name <- paste0(sktb_sample_first_name(), sktb_sample_name_suffix(), collapse = "")
+    target_name <- stringi::stri_c(sktb_sample_first_name(), sktb_sample_name_suffix(), collapse = "")
   } else {
-    target_name <- paste0(target_name, sktb_sample_name_suffix(), collapse = "")
+    target_name <- stringi::stri_c(target_name, sktb_sample_name_suffix(), collapse = "")
   }
   message <- message %>%
     stringi::stri_replace_all_regex("\\{TARGET_NAME\\}", target_name) %>%
@@ -41,8 +41,8 @@ sktb_conv_tags_flex <- function(message, emoji_rep = 1L) {
         .x,
         dplyr::if_else(
           emoji_rep > 0,
-          paste0(dqrng::dqsample(flextags[[.y]], emoji_rep, replace = !(length(flextags[[.y]]) < emoji_rep)), collapse = ""),
-          "\u3002"
+          stringi::stri_c(dqrng::dqsample(flextags[[.y]], emoji_rep, replace = !(length(flextags[[.y]]) < emoji_rep)), collapse = ""),
+          stringi::stri_enc_toutf8("\u3002")
         )
       )
     }

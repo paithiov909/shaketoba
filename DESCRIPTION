@@ -2,7 +2,8 @@ Package: shaketoba
 Title: R Port of Ojisan NArikiri Randomized Algorithm
 Version: 0.1.0.900
 Authors@R: c(
-    person("Akiru", "Kato", email = "paithiov909@gmail.com", role = c("cre", "aut")))
+    person("Akiru", "Kato", email = "paithiov909@gmail.com", role = c("cre", "aut")),
+    person("Guangchuang", "Yu", role = c("aut")))
 Description: 'Shaketoba', also pronounced as 'Saketoba', is salty dried autumn salmon
     that is known as a traditional food in the Hokkaido and Tohoku regions of Japan.
 License: MIT + file LICENSE
@@ -18,7 +19,6 @@ Imports:
   dqrng,
   golem,
   metathis,
-  meme,
   purrr,
   rlang,
   showtext,
@@ -30,6 +30,7 @@ Imports:
 Suggests:
   devtools,
   jsonlite,
+  meme,
   pkgdown,
   pkgload,
   processx,

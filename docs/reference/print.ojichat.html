@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Convert charclass of the last nth characters — sktb_conv_tail_charclass • shaketoba</title>
+<title>print method for meme object — print.ojichat • shaketoba</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Convert charclass of the last nth characters — sktb_conv_tail_charclass" />
-<meta property="og:description" content="Convert charclass of the last nth characters" />
+<meta property="og:title" content="print method for meme object — print.ojichat" />
+<meta property="og:description" content="print method for meme object" />
 
 
 
@@ -108,38 +108,95 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Convert charclass of the last nth characters</h1>
-    <small class="dont-index">Source: <a href='https://github.com/paithiov909/shaketoba/blob/master/R/utils_generator.R'><code>R/utils_generator.R</code></a></small>
-    <div class="hidden name"><code>sktb_conv_tail_charclass.Rd</code></div>
+    <h1>print method for meme object</h1>
+    <small class="dont-index">Source: <a href='https://github.com/paithiov909/shaketoba/blob/master/R/utils_plot.R'><code>R/utils_plot.R</code></a></small>
+    <div class="hidden name"><code>print.ojichat.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Convert charclass of the last nth characters</p>
+    <p>print method for meme object</p>
     </div>
 
-    <pre class="usage"><span class='fu'>sktb_conv_tail_charclass</span><span class='op'>(</span><span class='va'>message</span>, tail <span class='op'>=</span> <span class='fl'>1L</span>, to <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"katakana"</span>, <span class='st'>"hiragana"</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='co'># S3 method for ojichat</span>
+<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span>
+  <span class='va'>x</span>,
+  size <span class='op'>=</span> <span class='cn'>NULL</span>,
+  color <span class='op'>=</span> <span class='cn'>NULL</span>,
+  font <span class='op'>=</span> <span class='cn'>NULL</span>,
+  upper <span class='op'>=</span> <span class='cn'>NULL</span>,
+  lower <span class='op'>=</span> <span class='cn'>NULL</span>,
+  vjust <span class='op'>=</span> <span class='cn'>NULL</span>,
+  bgcolor <span class='op'>=</span> <span class='cn'>NULL</span>,
+  r <span class='op'>=</span> <span class='cn'>NULL</span>,
+  newpage <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/NULL.html'>is.null</a></span><span class='op'>(</span><span class='va'>vp</span><span class='op'>)</span>,
+  vp <span class='op'>=</span> <span class='cn'>NULL</span>,
+  newdev <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>message</th>
-      <td><p>character vector.</p></td>
+      <th>x</th>
+      <td><p>meme object</p></td>
     </tr>
     <tr>
-      <th>tail</th>
-      <td><p>integer.</p></td>
+      <th>size</th>
+      <td><p>size of text</p></td>
     </tr>
     <tr>
-      <th>to</th>
-      <td><p>this argument is passed to <code><a href='https://uribo.github.io/zipangu/reference/str_jconv.html'>zipangu::str_conv_hirakana()</a></code>.</p></td>
+      <th>color</th>
+      <td><p>color of text</p></td>
+    </tr>
+    <tr>
+      <th>font</th>
+      <td><p>font family of text</p></td>
+    </tr>
+    <tr>
+      <th>upper</th>
+      <td><p>upper text</p></td>
+    </tr>
+    <tr>
+      <th>lower</th>
+      <td><p>lower text</p></td>
+    </tr>
+    <tr>
+      <th>vjust</th>
+      <td><p>vertical adjustment ratio</p></td>
+    </tr>
+    <tr>
+      <th>bgcolor</th>
+      <td><p>background color of shadow text</p></td>
+    </tr>
+    <tr>
+      <th>r</th>
+      <td><p>ratio for shadow text</p></td>
+    </tr>
+    <tr>
+      <th>newpage</th>
+      <td><p>draw new (empty) page first?</p></td>
+    </tr>
+    <tr>
+      <th>vp</th>
+      <td><p>viewport to draw plot in</p></td>
+    </tr>
+    <tr>
+      <th>newdev</th>
+      <td><p>open new graphic device?</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>other arguments not used by this method</p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>list of character.</p>
-
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='va'>f</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span><span class='op'>(</span><span class='st'>"angry8.jpg"</span>, package<span class='op'>=</span><span class='st'>"meme"</span><span class='op'>)</span>
+<span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'>meme</span><span class='op'>(</span><span class='va'>f</span>, <span class='st'>"code"</span>, <span class='st'>"all the things!"</span>, font <span class='op'>=</span> <span class='st'>"Helvetica"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='error'>Error in meme(f, "code", "all the things!", font = "Helvetica"):  関数 "meme" を見つけることができませんでした </span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='error'>Error in print(x):  オブジェクト 'x' がありません </span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

@@ -18,18 +18,17 @@ sktb_module <- function(id) {
       renew_ojichat <-
         shiny::eventReactive(input$render, {
           message <-
-            sktb_sample_message(1L, collapse = "EOS") %>%
+            sktb_sample_message(1L, collapse = "BREAK_HERE") %>%
             sktb_insert_comma(input$pos, input$comma) %>%
             sktb_conv_tags_all(input$name, input$emoji)
           message
         })
-      output$plot <- shiny::renderPlot(
-        {
-          g <- renew_ojichat() %>%
-            sktb_plot_ojichat(split = "EOS")
-          return(g)
-        }
-      )
+      output$plot <- shiny::renderPlot({
+        print(renew_ojichat()) ## Logging for debug
+        g <- renew_ojichat() %>%
+          sktb_plot_ojichat(split = "BREAK_HERE")
+        return(g)
+      })
     }
   )
 }

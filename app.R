@@ -7,6 +7,8 @@ if (!dir.exists("~/.fonts")) { dir.create("~/.fonts") }
 file.copy("./inst/fonts/setofont-sp-merged.ttf", "~/.fonts", overwrite = TRUE)
 system("fc-cache -vf ~/.fonts")
 
+# print(head(sysfonts::font_files())$family)
+
 ## Load app
 pkgload::load_all(export_all = FALSE, helpers = FALSE, attach_testthat = FALSE)
 options(

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Convert charclass of the last nth characters — sktb_conv_tail_charclass • shaketoba</title>
+<title>On load — .onLoad • shaketoba</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Convert charclass of the last nth characters — sktb_conv_tail_charclass" />
-<meta property="og:description" content="Convert charclass of the last nth characters" />
+<meta property="og:title" content="On load — .onLoad" />
+<meta property="og:description" content="On load" />
 
 
 
@@ -108,37 +108,30 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Convert charclass of the last nth characters</h1>
-    <small class="dont-index">Source: <a href='https://github.com/paithiov909/shaketoba/blob/master/R/utils_generator.R'><code>R/utils_generator.R</code></a></small>
-    <div class="hidden name"><code>sktb_conv_tail_charclass.Rd</code></div>
+    <h1>On load</h1>
+    <small class="dont-index">Source: <a href='https://github.com/paithiov909/shaketoba/blob/master/R/zzz.R'><code>R/zzz.R</code></a></small>
+    <div class="hidden name"><code>dot-onLoad.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Convert charclass of the last nth characters</p>
+    <p>On load</p>
     </div>
 
-    <pre class="usage"><span class='fu'>sktb_conv_tail_charclass</span><span class='op'>(</span><span class='va'>message</span>, tail <span class='op'>=</span> <span class='fl'>1L</span>, to <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"katakana"</span>, <span class='st'>"hiragana"</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>.onLoad</span><span class='op'>(</span><span class='va'>libname</span>, <span class='va'>pkgname</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>message</th>
-      <td><p>character vector.</p></td>
+      <th>libname</th>
+      <td><p>libname</p></td>
     </tr>
     <tr>
-      <th>tail</th>
-      <td><p>integer.</p></td>
-    </tr>
-    <tr>
-      <th>to</th>
-      <td><p>this argument is passed to <code><a href='https://uribo.github.io/zipangu/reference/str_jconv.html'>zipangu::str_conv_hirakana()</a></code>.</p></td>
+      <th>pkgname</th>
+      <td><p>pkgname</p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>list of character.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
