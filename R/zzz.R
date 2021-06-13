@@ -1,6 +1,14 @@
 #' @noRd
+.locale <- NULL
+
+#' @noRd
 .mdl <- NULL
 
+#' Wrapper of udpipe::udpipe
+#'
+#' @param message character vector.
+#' @return data.frame
+#'
 #' @keywords internal
 sktb_udpipe <- function(message) {
   udpipe::udpipe(stringi::stri_enc_toutf8(message), .mdl)
@@ -14,7 +22,7 @@ sktb_udpipe <- function(message) {
 #' @keywords internal
 .onLoad <- function(libname, pkgname) {
 
-  ## Preload udpipe model
+  ## Preload udpipe model.
   model_path <- ifelse(Sys.getenv("SKTB_UDMODEL_PATH") != "",
     file.path("SKTB_UDMODEL_PATH"),
     system.file("models/japanese-gsd-ud-2.5-191206.udpipe", package = pkgname)
@@ -28,6 +36,9 @@ sktb_udpipe <- function(message) {
   )
   if (.Platform$OS.type == "windows") windowsFonts("SetoFont-SP" = windowsFont("SetoFont-SP"))
 
+  ## Reset strigni default locale.
+  .locale <<- stringi::stri_locale_set("ja_JP")
+
   ## Init showtext
   showtext::showtext_auto()
 }
@@ -38,5 +49,6 @@ sktb_udpipe <- function(message) {
 #'
 #' @keywords internal
 .onUnload <- function(libpath) {
+  stringi::stri_locale_set(.locale)
   showtext::showtext_auto(FALSE)
 }

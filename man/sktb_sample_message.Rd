@@ -14,9 +14,9 @@ sktb_sample_message(
 \arguments{
 \item{size}{integer.}
 
-\item{merge}{list. internaly passed to \code{sktb_message_pattern()}.}
+\item{merge}{list passed to \code{sktb_message_pattern()}.}
 
-\item{tail}{integer. passed to \code{sktb_conv_tail_charclass()}.}
+\item{tail}{integer passed to \code{sktb_conv_tail_charclass()}.}
 
 \item{collapse}{character scalar.}
 }

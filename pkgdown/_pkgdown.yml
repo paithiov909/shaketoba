@@ -1,3 +1,24 @@
 destination: docs
 
 url: https://paithiov909.github.io/shaketoba
+
+reference:
+  - title: "Core"
+    contents:
+      - run_app
+      - sktb_sample_message
+      - sktb_conv_ojichat
+      - sktb_plot_ojichat
+  - title: "Patterns"
+    contents:
+      - sktb_conv_tags_all
+      - sktb_conv_tail_charclass
+      - sktb_insert_comma
+      - sktb_sample_first_name
+      - sktb_sample_name_suffix
+  - title: "Data"
+    contents:
+      - templates
+      - flextags
+      - uniqtags
+      - gimei

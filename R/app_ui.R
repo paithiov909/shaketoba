@@ -18,8 +18,8 @@ app_ui <- function(request) {
       shiny::includeHTML(app_sys("app/include.html"))
     ),
     shiny::sidebarLayout(
-      shiny::sidebarPanel(app_ui_control("sktb-app")),
-      shiny::mainPanel(app_ui_main("sktb-app"))
+      shiny::sidebarPanel(app_ui_control("sktbapp")),
+      shiny::mainPanel(app_ui_main("sktbapp"))
     ),
     lang = "ja"
   )
@@ -43,7 +43,7 @@ app_ui_main <- function(id) {
 #' @noRd
 app_ui_control <- function(id) {
   ns <- shiny::NS(id)
-  # label
+  ## Named vector for 'pos' label.
   pos_label <- c(joshi = "ADP", jodoshi = "AUX")
   names(pos_label) <- c(
     enc2utf8("\u52a9\u8a5e"),

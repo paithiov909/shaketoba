@@ -9,7 +9,7 @@
 #' @importFrom metathis meta meta_social
 #' @importFrom rlang is_empty arg_match
 #' @importFrom showtext showtext_auto
-#' @importFrom sysfonts font_paths font_add
+#' @importFrom sysfonts font_add
 #' @importFrom udpipe udpipe_load_model udpipe
 #' @importFrom zipangu str_conv_hirakana
 #' @docType package

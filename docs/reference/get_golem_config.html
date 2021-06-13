@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Plot an ojichat meme — sktb_plot_ojichat • shaketoba</title>
+<title>Read app config — get_golem_config • shaketoba</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Plot an ojichat meme — sktb_plot_ojichat" />
-<meta property="og:description" content="Plot an ojichat meme" />
+<meta property="og:title" content="Read app config — get_golem_config" />
+<meta property="og:description" content="Read app config" />
 
 
 
@@ -108,39 +108,38 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Plot an ojichat meme</h1>
-    <small class="dont-index">Source: <a href='https://github.com/paithiov909/shaketoba/blob/master/R/utils_plot.R'><code>R/utils_plot.R</code></a></small>
-    <div class="hidden name"><code>sktb_plot_ojichat.Rd</code></div>
+    <h1>Read app config</h1>
+    <small class="dont-index">Source: <a href='https://github.com/paithiov909/shaketoba/blob/master/R/app_config.R'><code>R/app_config.R</code></a></small>
+    <div class="hidden name"><code>get_golem_config.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Plot an ojichat meme</p>
+    <p>Read app config</p>
     </div>
 
-    <pre class="usage"><span class='fu'>sktb_plot_ojichat</span><span class='op'>(</span><span class='va'>str</span>, img <span class='op'>=</span> <span class='cn'>NULL</span>, split <span class='op'>=</span> <span class='st'>" "</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>get_golem_config</span><span class='op'>(</span>
+  <span class='va'>value</span>,
+  config <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span><span class='op'>(</span><span class='st'>"R_CONFIG_ACTIVE"</span>, <span class='st'>"default"</span><span class='op'>)</span>,
+  use_parent <span class='op'>=</span> <span class='cn'>TRUE</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>str</th>
-      <td><p>ojichat message.</p></td>
+      <th>value</th>
+      <td><p>Value to retrieve from the config file.</p></td>
     </tr>
     <tr>
-      <th>img</th>
-      <td><p>`NULL` or the file path to an image
-(intenally passed to <code><a href='https://docs.ropensci.org/magick/reference/editing.html'>magick::image_read()</a></code>).</p></td>
+      <th>config</th>
+      <td><p>R_CONFIG_ACTIVE value.</p></td>
     </tr>
     <tr>
-      <th>split</th>
-      <td><p>character scalar passed to <code><a href='https://rdrr.io/pkg/stringi/man/stri_replace.html'>stringi::stri_replace_all_fixed()</a></code>
-(NOT reprex).</p></td>
+      <th>use_parent</th>
+      <td><p>Logical, scan the parent directory for config file.</p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>an ojichat class object is returned.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

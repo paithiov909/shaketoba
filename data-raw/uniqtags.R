@@ -3,8 +3,8 @@
 
 uniqtags <- list(
   first_person = jsonlite::read_json("data-raw/first_person.json", simplifyVector = TRUE),
-  day_of_week = c(
-    "月", "火", "水", "木", "金", "土", "日"
+  day_of_week = stringi::stri_enc_toutf8(
+    c("月", "火", "水", "木", "金", "土", "日")
   ),
   location = c(
     stringi::stri_sub(zipangu::jpnprefs$prefecture_kanji, 1, -2)

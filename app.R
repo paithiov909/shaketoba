@@ -1,6 +1,6 @@
 # Launch the ShinyApp (Do not remove this comment)
 
-Sys.setenv("LANG" = "ja_JP.UTF-8")
+# Sys.setenv("LANG" = "ja_JP.UTF-8")
 
 ## Copy font files manually and call `fc-cache`.
 if (!dir.exists("~/.fonts")) { dir.create("~/.fonts") }

@@ -14,28 +14,28 @@ LazyData: true
 RoxygenNote: 7.1.1
 Depends: R (>= 2.10)
 Imports:
-  config,
-  dplyr,
-  dqrng,
-  golem,
-  metathis,
-  purrr,
-  rlang,
-  showtext,
-  shiny,
-  stringi,
-  sysfonts,
-  udpipe,
-  zipangu
+    config,
+    dplyr,
+    dqrng,
+    golem,
+    metathis,
+    purrr,
+    rlang,
+    showtext,
+    shiny,
+    stringi,
+    sysfonts,
+    udpipe,
+    zipangu
 Suggests:
-  devtools,
-  jsonlite,
-  meme,
-  pkgdown,
-  pkgload,
-  processx,
-  renv,
-  styler,
-  testthat (>= 3.0.0),
-  yaml
+    devtools,
+    jsonlite,
+    meme,
+    pkgdown,
+    pkgload,
+    processx,
+    renv,
+    styler,
+    testthat (>= 3.0.0),
+    yaml
 Config/testthat/edition: 3

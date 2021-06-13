@@ -19,7 +19,6 @@
 "uniqtags"
 
 #' Illustrations
-#' @keywords internal
 #' @noRd
 sktb_images <- function() {
   c(

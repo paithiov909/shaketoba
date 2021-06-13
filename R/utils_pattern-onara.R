@@ -4,7 +4,7 @@
 #' @return list.
 #'
 #' @keywords internal
-#' @noRd
+#' @export
 sktb_message_pattern <- function(merge) {
   res <- list(
     gqs = c("greeting", "question", "sympathy"),

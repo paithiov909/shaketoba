@@ -9,12 +9,14 @@ sktb_plot_ojichat(str, img = NULL, split = " ")
 \arguments{
 \item{str}{ojichat message.}
 
-\item{img}{passed to \code{sktb_meme()}.}
+\item{img}{`NULL` or the file path to an image
+(intenally passed to \code{magick::image_read()}).}
 
-\item{split}{character scalar passed to \code{stringi::stri_replace_all_fixed()} (NOT reprex).}
+\item{split}{character scalar passed to \code{stringi::stri_replace_all_fixed()}
+(NOT reprex).}
 }
 \value{
-object returned from \code{sktb_meme()}.
+an ojichat class object is returned.
 }
 \description{
 Plot an ojichat meme

@@ -17,5 +17,6 @@ sktb_conv_tail_charclass(message, tail = 1L, to = c("katakana", "hiragana"))
 list of character.
 }
 \description{
-Convert charclass of the last nth characters
+If the `tail` is less than 1, the conversion is skipped
+(returning the `message` directly).
 }

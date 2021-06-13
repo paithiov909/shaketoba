@@ -4,6 +4,9 @@
     <loc>https://paithiov909.github.io/shaketoba/index.html</loc>
   </url>
   <url>
+    <loc>https://paithiov909.github.io/shaketoba/reference/app_sys.html</loc>
+  </url>
+  <url>
     <loc>https://paithiov909.github.io/shaketoba/reference/asp.html</loc>
   </url>
   <url>
@@ -16,13 +19,10 @@
     <loc>https://paithiov909.github.io/shaketoba/reference/flextags.html</loc>
   </url>
   <url>
+    <loc>https://paithiov909.github.io/shaketoba/reference/get_golem_config.html</loc>
+  </url>
+  <url>
     <loc>https://paithiov909.github.io/shaketoba/reference/gimei.html</loc>
-  </url>
-  <url>
-    <loc>https://paithiov909.github.io/shaketoba/reference/plot.ojichat.html</loc>
-  </url>
-  <url>
-    <loc>https://paithiov909.github.io/shaketoba/reference/print.ojichat.html</loc>
   </url>
   <url>
     <loc>https://paithiov909.github.io/shaketoba/reference/run_app.html</loc>
@@ -43,7 +43,7 @@
     <loc>https://paithiov909.github.io/shaketoba/reference/sktb_insert_comma.html</loc>
   </url>
   <url>
-    <loc>https://paithiov909.github.io/shaketoba/reference/sktb_meme.html</loc>
+    <loc>https://paithiov909.github.io/shaketoba/reference/sktb_message_pattern.html</loc>
   </url>
   <url>
     <loc>https://paithiov909.github.io/shaketoba/reference/sktb_plot_ojichat.html</loc>
@@ -56,6 +56,9 @@
   </url>
   <url>
     <loc>https://paithiov909.github.io/shaketoba/reference/sktb_sample_name_suffix.html</loc>
+  </url>
+  <url>
+    <loc>https://paithiov909.github.io/shaketoba/reference/sktb_udpipe.html</loc>
   </url>
   <url>
     <loc>https://paithiov909.github.io/shaketoba/reference/templates.html</loc>

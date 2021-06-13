@@ -21,8 +21,8 @@ sktb_conv_ojichat <- function(message,
 #' Sample message template
 #'
 #' @param size integer.
-#' @param merge list. internaly passed to \code{sktb_message_pattern()}.
-#' @param tail integer. passed to \code{sktb_conv_tail_charclass()}.
+#' @param merge list passed to \code{sktb_message_pattern()}.
+#' @param tail integer passed to \code{sktb_conv_tail_charclass()}.
 #' @param collapse character scalar.
 #' @return message templates are returned as a charcter vector.
 #'
@@ -42,6 +42,9 @@ sktb_sample_message <- function(size = 1L, merge = list(), tail = sample.int(3, 
 
 #' Convert charclass of the last nth characters
 #'
+#' If the `tail` is less than 1, the conversion is skipped
+#' (returning the `message` directly).
+#'
 #' @param message character vector.
 #' @param tail integer.
 #' @param to this argument is passed to \code{zipangu::str_conv_hirakana()}.
@@ -54,10 +57,10 @@ sktb_conv_tail_charclass <- function(message, tail = 1L, to = c("katakana", "hir
   }
   to <- rlang::arg_match(to)
   message <- stringi::stri_split_boundaries(
-    ## This function is locale-sensitive.
-    ## See `?stringi::about_search_coll`
-    message,
-    opts_brkiter = stringi::stri_opts_brkiter("character", "ja_JP")
+    ## The `stri_split_boundaries` function is locale-sensitive,
+    ## i.e. can be set a respective locale over stringi default locale.
+    ## See `?stringi::about_search_coll`.
+    message # , opts_brkiter = stringi::stri_opts_brkiter("character", "ja_JP")
   )
   message <-
     lapply(message, function(elem) {
@@ -79,14 +82,14 @@ sktb_conv_tail_charclass <- function(message, tail = 1L, to = c("katakana", "hir
 #'
 #' @param message character scalar.
 #' @param pos_after character vector.
-#' @param comma_freq numeric.
+#' @param comma_freq numeric (if less than 0, the function does nothing).
 #' @return character vector.
 #'
 #' @export
 sktb_insert_comma <- function(message,
                               pos_after = c("ADP", "AUX"),
                               comma_freq = 0) {
-  if (comma_freq == 0) {
+  if (comma_freq <= 0) {
     return(message)
   }
   tokens <- sktb_udpipe(message)

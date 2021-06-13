@@ -11,7 +11,7 @@ sktb_insert_comma(message, pos_after = c("ADP", "AUX"), comma_freq = 0)
 
 \item{pos_after}{character vector.}
 
-\item{comma_freq}{numeric.}
+\item{comma_freq}{numeric (if less than 0, the function does nothing).}
 }
 \value{
 character vector.

@@ -1,9 +1,11 @@
 #' Plot an ojichat meme
 #'
 #' @param str ojichat message.
-#' @param img passed to \code{sktb_meme()}.
-#' @param split character scalar passed to \code{stringi::stri_replace_all_fixed()} (NOT reprex).
-#' @return object returned from \code{sktb_meme()}.
+#' @param img `NULL` or the file path to an image
+#' (intenally passed to \code{magick::image_read()}).
+#' @param split character scalar passed to \code{stringi::stri_replace_all_fixed()}
+#' (NOT reprex).
+#' @return an ojichat class object is returned.
 #'
 #' @export
 sktb_plot_ojichat <- function(str, img = NULL, split = " ") {
@@ -24,7 +26,8 @@ sktb_plot_ojichat <- function(str, img = NULL, split = " ") {
 #' @importFrom magick image_read image_info
 #' @importFrom grid textGrob rasterGrob gpar viewport grid.draw gList
 #' @importFrom grDevices dev.new
-#' @export
+#' @keywords intrenal
+#' @noRd
 sktb_meme <- function(img,
                       upper = NULL,
                       lower = NULL,
@@ -89,7 +92,7 @@ grid.echo.ojichat <- function(x = NULL, newpage = TRUE, prefix = NULL) {
 
 #' @method + ojichat
 #' @importFrom utils modifyList
-#' @export
+#' @keywords internal
 "+.ojichat" <- function(e1, e2) {
   if (is(e2, "uneval")) {
     e2 <- as.character(e2)
@@ -105,7 +108,8 @@ grid.echo.ojichat <- function(x = NULL, newpage = TRUE, prefix = NULL) {
 #' @inherit meme::print.meme
 #' @importFrom grDevices dev.list dev.off dev.size dev.interactive
 #' @importFrom grid grid.newpage pushViewport upViewport seekViewport
-#' @export
+#' @keywords internal
+#' @noRd
 print.ojichat <- function(x, size = NULL, color = NULL, font = NULL,
                           upper = NULL, lower = NULL, vjust = NULL,
                           bgcolor = NULL, r = NULL,
@@ -137,7 +141,8 @@ print.ojichat <- function(x, size = NULL, color = NULL, font = NULL,
 
 #' @name plot.ojichat
 #' @inherit meme::plot.meme
-#' @export
+#' @keywords intrenal
+#' @noRd
 plot.ojichat <- print.ojichat
 
 #' @noRd
@@ -153,7 +158,7 @@ as.gTree <- function(x) {
   gTree(children = as.gList(x))
 }
 
-#' Removing `base::toupper` from shadowtext
+#' Removing `base::toupper` from shadowtext calls.
 #' @noRd
 #' @importFrom grid gList
 as.gList <- function(x) {

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Plot an ojichat meme — sktb_plot_ojichat • shaketoba</title>
+<title>Onara message patterns — sktb_message_pattern • shaketoba</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Plot an ojichat meme — sktb_plot_ojichat" />
-<meta property="og:description" content="Plot an ojichat meme" />
+<meta property="og:title" content="Onara message patterns — sktb_message_pattern" />
+<meta property="og:description" content="Onara message patterns" />
 
 
 
@@ -108,39 +108,29 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Plot an ojichat meme</h1>
-    <small class="dont-index">Source: <a href='https://github.com/paithiov909/shaketoba/blob/master/R/utils_plot.R'><code>R/utils_plot.R</code></a></small>
-    <div class="hidden name"><code>sktb_plot_ojichat.Rd</code></div>
+    <h1>Onara message patterns</h1>
+    <small class="dont-index">Source: <a href='https://github.com/paithiov909/shaketoba/blob/master/R/utils_pattern-onara.R'><code>R/utils_pattern-onara.R</code></a></small>
+    <div class="hidden name"><code>sktb_message_pattern.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Plot an ojichat meme</p>
+    <p>Onara message patterns</p>
     </div>
 
-    <pre class="usage"><span class='fu'>sktb_plot_ojichat</span><span class='op'>(</span><span class='va'>str</span>, img <span class='op'>=</span> <span class='cn'>NULL</span>, split <span class='op'>=</span> <span class='st'>" "</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>sktb_message_pattern</span><span class='op'>(</span><span class='va'>merge</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>str</th>
-      <td><p>ojichat message.</p></td>
-    </tr>
-    <tr>
-      <th>img</th>
-      <td><p>`NULL` or the file path to an image
-(intenally passed to <code><a href='https://docs.ropensci.org/magick/reference/editing.html'>magick::image_read()</a></code>).</p></td>
-    </tr>
-    <tr>
-      <th>split</th>
-      <td><p>character scalar passed to <code><a href='https://rdrr.io/pkg/stringi/man/stri_replace.html'>stringi::stri_replace_all_fixed()</a></code>
-(NOT reprex).</p></td>
+      <th>merge</th>
+      <td><p>list.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>an ojichat class object is returned.</p>
+    <p>list.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
