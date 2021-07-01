@@ -10,6 +10,7 @@ system("fc-cache -vf ~/.fonts")
 # print(head(sysfonts::font_files())$family)
 
 ## Load app
+# golem::detach_all_attached() # Detach all loaded packages and clean your environment
 pkgload::load_all(export_all = FALSE, helpers = FALSE, attach_testthat = FALSE)
 options(
   "golem.app.prod" = TRUE
