@@ -20,9 +20,9 @@ Useful links:
 \author{
 \strong{Maintainer}: Akiru Kato \email{paithiov909@gmail.com}
 
-Authors:
+Other contributors:
 \itemize{
-  \item Guangchuang Yu
+  \item Guangchuang Yu [copyright holder]
 }
 
 }

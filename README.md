@@ -16,8 +16,10 @@
 
 Shinyアプリとして利用できます。
 
-> [Shaketoba \|
-> おじさんLINE文章画像ジェネレータ](https://paithiov909.shinyapps.io/shaketoba/)
+```r
+require(shaketoba)
+run_app()
+```
 
 たぶんこういう感じの画像をプロットできます。
 

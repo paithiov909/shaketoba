@@ -37,7 +37,7 @@ sktb_udpipe <- function(message) {
   if (.Platform$OS.type == "windows") windowsFonts("SetoFont-SP" = windowsFont("SetoFont-SP"))
 
   ## Reset strigni default locale.
-  .locale <<- stringi::stri_locale_set("ja_JP")
+  # .locale <<- stringi::stri_locale_set("ja_JP")
 
   ## Init showtext
   showtext::showtext_auto()
@@ -49,6 +49,6 @@ sktb_udpipe <- function(message) {
 #'
 #' @keywords internal
 .onUnload <- function(libpath) {
-  stringi::stri_locale_set(.locale)
+  # stringi::stri_locale_set(.locale)
   showtext::showtext_auto(FALSE)
 }
